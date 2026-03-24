@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function() {
+        const theme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.classList.remove('light', 'dark');
+        document.documentElement.classList.add(theme);
+      })();
+    </script>
+    <title>Hezran Arkee Malaiga | Portfolio</title>
+    <meta name="description" content="Hezran Arkee Malaiga - Informatics student & aspiring full-stack developer portfolio." />
+    <meta name="author" content="Hezran Arkee Malaiga" />
+
+    <meta property="og:title" content="Hezran Arkee Malaiga | Portfolio" />
+    <meta property="og:description" content="Informatics student & aspiring full-stack developer portfolio." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Lovable" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
