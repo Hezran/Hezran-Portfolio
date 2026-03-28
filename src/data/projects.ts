@@ -24,14 +24,15 @@ export const featuredProjects: Project[] = [
     hasDetailPage: true,
   },
   {
-    slug: "e-commerce-platform",
-    title: "E-Commerce Platform",
+    slug: "typefast",
+    title: "TypeFast",
     description:
-      "A full-featured online store with product management, shopping cart, and payment integration built with React and Node.js.",
-    tags: ["React", "Node.js", "MongoDB", "Tailwind CSS"],
-    github: "#",
+      "A high-performance, minimalist typing test platform inspired by Monkeytype, featuring real-time WPM tracking, a global leaderboard, and user authentication.",
+    tags: ["React", "Vite", "Express.js", "PostgreSQL", "Prisma"],
+    github: "https://github.com/Hezran/typefast",
     live: "#",
-    image: "/images/projects/ecommerce-hero.png",
+    image: "/images/projects2/1.png",
+    hasDetailPage: true,
   },
 ];
 
