@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft, Smartphone, Server, Sparkles, Github, ExternalLink, ZoomIn, Gauge } from "lucide-react";
@@ -88,6 +88,10 @@ const ProjectDetail = () => {
   const navigate = useNavigate();
   const project = slug ? getProjectBySlug(slug) : undefined;
   const [fullscreenImage, setFullscreenImage] = useState<{ src: string; alt: string } | null>(null);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   if (!project) {
     return (
@@ -243,6 +247,7 @@ const ProjectDetail = () => {
                 </div>
               </motion.div>
 
+              {false && (
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -256,6 +261,7 @@ const ProjectDetail = () => {
                   </Link>
                 </Button>
               </motion.div>
+              )}
             </div>
           </section>
         )}
@@ -349,6 +355,7 @@ const ProjectDetail = () => {
                 </div>
               </motion.div>
 
+              {false && (
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -362,6 +369,7 @@ const ProjectDetail = () => {
                   </Link>
                 </Button>
               </motion.div>
+              )}
             </div>
           </section>
         )}
@@ -380,7 +388,7 @@ const ProjectDetail = () => {
         </Dialog>
 
         {/* Generic fallback for other projects without custom content */}
-        {!isScentify && !isTypeFast && (
+        {!isScentify && !isTypeFast && false && (
           <section className="section-padding">
             <div className="container mx-auto max-w-4xl text-center">
               <Button variant="outline" asChild>

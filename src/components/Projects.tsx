@@ -77,7 +77,9 @@ const Projects = () => {
             </motion.article>
           ))}
         </div>
-
+        
+        {/* View all featured projects button */}
+        {false && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -91,6 +93,7 @@ const Projects = () => {
             </Link>
           </Button>
         </motion.div>
+        )}
       </div>
     </section>
   );

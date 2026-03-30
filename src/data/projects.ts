@@ -18,7 +18,7 @@ export const featuredProjects: Project[] = [
     description:
       "A web and mobile perfume recommendation app that helps users discover their perfect scent using content-based filtering.",
     tags: ["Flutter", "Flask", "REST API", "Content-based filtering"],
-    github: "#",
+    github: "https://github.com/Hezran/app_scentify_pp",
     live: "#",
     image: "/images/projects/scentify-home.png",
     hasDetailPage: true,
@@ -29,7 +29,7 @@ export const featuredProjects: Project[] = [
     description:
       "A high-performance, minimalist typing test platform inspired by Monkeytype, featuring real-time WPM tracking, a global leaderboard, and user authentication.",
     tags: ["React", "Vite", "Express.js", "PostgreSQL", "Prisma"],
-    github: "https://github.com/Hezran/typefast",
+    github: "https://github.com/Hezran/typefast-typing-project",
     live: "#",
     image: "/images/projects2/1.png",
     hasDetailPage: true,
