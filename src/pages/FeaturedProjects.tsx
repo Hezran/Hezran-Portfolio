@@ -100,7 +100,7 @@ const FeaturedProjects = () => {
                           Code
                         </a>
                       </Button>
-                      <Button variant="outline" size="sm" asChild>
+                      {/* <Button variant="outline" size="sm" asChild>
                         <a
                           href={project.live}
                           target="_blank"
@@ -110,7 +110,7 @@ const FeaturedProjects = () => {
                           <ExternalLink size={16} />
                           Live demo
                         </a>
-                      </Button>
+                      </Button> */}
                     </div>
                   </div>
                 </motion.article>

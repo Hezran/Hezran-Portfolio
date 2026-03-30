@@ -81,19 +81,22 @@ const Hero = () => {
               {[
                 { icon: Github, href: "https://github.com/Hezran", label: "GitHub" },
                 { icon: Linkedin, href: "https://www.linkedin.com/in/hezran-arkee-malaiga", label: "LinkedIn" },
-                { icon: Mail, href: "mailto:hezranmalaiga@gmail.com", label: "Email" },
-              ].map(({ icon: Icon, href, label }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-primary transition-colors duration-200"
-                  aria-label={label}
-                >
-                  <Icon size={22} />
-                </a>
-              ))}
+                { icon: Mail, href: "https://mail.google.com/mail/?view=cm&fs=1&to=hezranmalaiga@gmail.com", label: "Email" },
+              ].map(({ icon: Icon, href, label }) => {
+                const isMail = href.startsWith("mailto");
+                return (
+                  <a
+                    key={label}
+                    href={href}
+                    target={isMail ? "_self" : "_blank"}
+                    rel={isMail ? undefined : "noopener noreferrer"}
+                    className="text-muted-foreground hover:text-primary transition-colors duration-200"
+                    aria-label={label}
+                  >
+                    <Icon size={22} />
+                  </a>
+                );
+              })}
             </motion.div>
           </motion.div>
 

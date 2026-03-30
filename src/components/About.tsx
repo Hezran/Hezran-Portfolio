@@ -86,7 +86,7 @@ const About = () => {
               <Button
                 onClick={() => {
                   const link = document.createElement("a");
-                  link.href = "/cv.pdf"; // Update this path to your actual CV file
+                  link.href = "/HEZRAN_CV_2026.pdf"; // Update this path to your actual CV file
                   link.download = "Hezran_Arkee_Malaiga_CV.pdf";
                   link.click();
                 }}
@@ -98,7 +98,7 @@ const About = () => {
               <Button
                 variant="outline"
                 onClick={() => {
-                  window.open("/cv.pdf", "_blank"); // Update this path to your actual CV file
+                  window.open("/HEZRAN_CV_2026.pdf", "_blank"); // Update this path to your actual CV file
                 }}
                 className="gap-2"
               >

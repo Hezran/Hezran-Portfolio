@@ -148,12 +148,12 @@ const ProjectDetail = () => {
                     Code
                   </a>
                 </Button>
-                <Button size="sm" asChild>
+                {/* <Button size="sm" asChild>
                   <a href={project.live} target="_blank" rel="noopener noreferrer" className="gap-2">
                     <ExternalLink size={16} />
                     Live demo
                   </a>
-                </Button>
+                </Button> */}
               </div>
             </motion.div>
           </div>

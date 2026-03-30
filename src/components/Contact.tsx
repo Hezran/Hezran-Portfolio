@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { Mail, MapPin, Send } from "lucide-react";
+import { Mail, MapPin, Send, Loader2 } from "lucide-react";
 import { useState } from "react";
+import { toast } from "sonner";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -8,12 +9,45 @@ const Contact = () => {
     email: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // For now, just log — can integrate with backend later
-    console.log("Form submitted:", formData);
-    setFormData({ name: "", email: "", message: "" });
+    setIsSubmitting(true);
+
+    try {
+      const formPayload = new FormData();
+      // NOTE: Replace the string below with your actual Web3Forms Access Key
+      // You can get one for free at https://web3forms.com/
+      formPayload.append("access_key", "f28474d3-c4fb-44d6-8810-0f60830c5f82");
+      formPayload.append("name", formData.name);
+      formPayload.append("email", formData.email);
+      formPayload.append("message", formData.message);
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formPayload,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        toast.success("Message sent successfully!", {
+          description: "Thank you for reaching out. I'll get back to you soon.",
+        });
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        toast.error("Failed to send message", {
+          description: data.message || "Please try again later.",
+        });
+      }
+    } catch (error) {
+      toast.error("Oops! Something went wrong.", {
+        description: "Please check your internet connection and try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -65,7 +99,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Location</p>
-                  <p className="font-medium text-sm">Yogyakarta</p>
+                  <p className="font-medium text-sm">Tangerang / Jakarta</p>
                 </div>
               </div>
             </div>
@@ -114,10 +148,20 @@ const Contact = () => {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               type="submit"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-primary text-primary-foreground font-semibold text-sm hover:opacity-90 transition-opacity glow-primary"
+              disabled={isSubmitting}
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-gradient-primary text-primary-foreground font-semibold text-sm hover:opacity-90 transition-opacity glow-primary disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Send Message
-              <Send size={16} />
+              {isSubmitting ? (
+                <>
+                  Sending...
+                  <Loader2 size={16} className="animate-spin" />
+                </>
+              ) : (
+                <>
+                  Send Message
+                  <Send size={16} />
+                </>
+              )}
             </motion.button>
           </motion.form>
         </div>
