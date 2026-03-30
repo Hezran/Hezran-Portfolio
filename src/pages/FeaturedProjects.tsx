@@ -48,7 +48,7 @@ const FeaturedProjects = () => {
         {/* Projects grid */}
         <section className="section-padding">
           <div className="container mx-auto">
-            <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-8">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {featuredProjects.map((project, i) => (
                 <motion.article
                   key={project.slug}
