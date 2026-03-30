@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { VscVscode } from "react-icons/vsc";
 import { 
   SiFlutter, SiFlask, SiPython, SiMysql, SiJavascript, SiReact, SiTailwindcss,
-  SiFigma, SiCanva, SiXampp, SiPostman, SiGithub, SiTypescript
+  SiFigma, SiCanva, SiXampp, SiPostman, SiGithub, SiTypescript, SiPostgresql
 } from "react-icons/si";
 
 // For The Tech Stack Section
@@ -15,6 +15,7 @@ const skills = [
   { name: "React", icon: SiReact },
   { name: "Tailwind", icon: SiTailwindcss },
   { name: "Typescript", icon: SiTypescript },
+  { name: "PostgreSQL", icon: SiPostgresql },
 ];
 
 // For The Tools Section
