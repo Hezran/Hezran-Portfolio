@@ -98,7 +98,7 @@ const About = () => {
               <Button
                 variant="outline"
                 onClick={() => {
-                  window.open("/HEZRAN_CV_2026_HIRED.pdf", "_blank"); // Update this path to your actual CV file
+                  window.open("/HEZRAN_CV_SWE_J.pdf", "_blank"); // Update this path to your actual CV file
                 }}
                 className="gap-2"
               >
